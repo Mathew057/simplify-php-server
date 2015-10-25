@@ -43,14 +43,28 @@ if (!isset($_POST["amount"]) || !isset($_POST['simplifyToken'])) {
 
 $token = $_POST['simplifyToken'];
 $payment = $_POST["amount"];
+$customerId = $_POST[]
 $currency = isset($_POST["currency"]) ? $_POST["currency"] : 'USD';
 
-$paymentPayload = array(
-	'amount' => $payment,
-	'token' => $token,
-	'description' => 'Test payment',
-	'currency' => $currency
-);
+
+
+if (isset($customerId)) {
+	$paymentPayload = array(
+		'amount' => $payment,
+		'customer' => $token,
+		'description' => 'Test payment',
+		'currency' => $currency
+	);
+}
+else {
+	$paymentPayload = array(
+		'amount' => $payment,
+		'token' => $token,
+		'description' => 'Test payment',
+		'currency' => $currency
+	);
+}
+
 $response = array();
 try {
 	$payment = Simplify_Payment::createPayment($paymentPayload);

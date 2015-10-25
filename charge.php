@@ -43,7 +43,7 @@ if (!isset($_POST["amount"]) || !isset($_POST['simplifyToken'])) {
 
 $token = $_POST['simplifyToken'];
 $payment = $_POST["amount"];
-$customerId = $_POST["id"]
+$customerId = $_POST["id"];
 $currency = isset($_POST["currency"]) ? $_POST["currency"] : 'USD';
 
 
@@ -51,7 +51,7 @@ $currency = isset($_POST["currency"]) ? $_POST["currency"] : 'USD';
 if (isset($customerId)) {
 	$paymentPayload = array(
 		'amount' => "46"//$payment,
-		'customer' => $token,
+		'customer' => $customerId,
 		'description' => 'Test payment',
 		'currency' => $currency
 	);

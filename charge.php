@@ -58,7 +58,7 @@ if (isset($customerId)) {
 }
 else {
 	$paymentPayload = array(
-		'amount' => $payment,
+		'amount' => "46"//$payment,
 		'token' => $token,
 		'description' => 'Test payment',
 		'currency' => $currency

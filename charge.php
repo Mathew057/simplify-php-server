@@ -50,7 +50,7 @@ $currency = isset($_POST["currency"]) ? $_POST["currency"] : 'USD';
 
 if (isset($customerId)) {
 	$paymentPayload = array(
-		'amount' => "500"//$payment,
+		'amount' => "46"//$payment,
 		'customer' => $token,
 		'description' => 'Test payment',
 		'currency' => $currency
